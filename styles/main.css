@@ -6,29 +6,52 @@
 }
 
 :root {
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
     --gap-block: 3.2rem;
     --orange-base: #F2994A ;
 
     --aside-width: 200px;
     --main-desktop-gap: 10%;
 
-    --h1-font-size: ;
-    --h2-font-size: ;
-    --h3-font-size: ;
-    --p-font-size: ;
-    --icons-font-size: ;
+    --h1-font-size: 2.4rem;
+    --h2-font-size: 1.8rem;
+    --h3-font-size: 1.6rem;
+    --p-font-size: 1.4rem;
+    --icons-font-size: 3.2rem;
+
+    --montserrat-font: 'Montserrat', sans-serif;
+    --playfair-font: 'Playfair Display', serif;
 
     --flex-direction-info-time: row;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: var(--h1-font-size);
+    font-family: var(--playfair-font);
+    font-weight: 700;
 }
-
+h2 {
+    font-size: var(--h2-font-size);
+    font-family: var(--playfair-font);
+    font-weight: 700;
+}
+h3 {
+    font-size: var(--h3-font-size);
+    font-family: var(--playfair-font);
+    font-weight: 400;
+}
+p {
+    font-size: var(--p-font-size);
+    font-family: var(--montserrat-font);
+    font-weight: 500;
+}
 a {
     text-decoration: none;
+    font-size: var(--p-font-size);
+    font-family: var(--montserrat-font);
+    font-weight: 500;
 }
+
 
 li {
     list-style: none;
@@ -70,7 +93,7 @@ se organizan en columnas gracias al siguiente codigo */
 .recipe-info__time {
     display: flex;
     flex-direction: var(--flex-direction-info-time); /* */
-    gap: 2rem;
+    gap: 3.2rem;
 }
 
 .aside {
@@ -80,9 +103,9 @@ se organizan en columnas gracias al siguiente codigo */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 3.2rem;
 
-    padding-block: 5rem; /* mas espacio interno */
+    padding-block: 8rem; /* mas espacio interno */
 }
 
 .main {
@@ -105,24 +128,43 @@ se organizan en columnas gracias al siguiente codigo */
 /* Estilos para los iconos */
 .recipe-info__servings span,
 .clock {
-    font-size: 2rem;
+    font-size: var(--icons-font-size);
 }
 
 .proccess {
     /* grow: 1 - shrink: 1 - basis: (3x)aside-width*/
     flex: 1 1 calc(var(--aside-width)*2); 
 }
-@media ( max-width: 772px ) {
-    :root {
 
-    }
+
+
+
+
+
+/* menores de 772px */
+@media ( max-width: 772px ) {
     .aside {
         padding: 0;
     }
 }
-@media (min-width: 772px) and (max-width: 991px) {
-    :root {
 
+/* entre 772px y 991px 
+
+    --h1-font-size: 2.4rem;
+    --h2-font-size: 1.8rem;
+    --h3-font-size: 1.6rem;
+    --p-font-size: 1.4rem;
+    --icons-font-size: 3.2rem;
+
+*/
+@media (min-width: 772px) {
+    :root {
+        font-size: 62.5%;
+        --h1-font-size: 3.2rem;
+        --h2-font-size: 2rem;
+        --h3-font-size: 1.8rem;
+        --p-font-size: 1.6rem;
+        --icons-font-size: 3.2rem;
         --flex-direction-info-time: column;
     }
     .aside {
@@ -130,8 +172,15 @@ se organizan en columnas gracias al siguiente codigo */
         border-radius: 12px;
     }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
+
+/* entre 992px y hasta 1200px */
+@media (min-width: 992px) {
     :root {
-        
+        font-size: 62.5%;
+        --h1-font-size: 4.8rem;
+        --h2-font-size: 2.4rem;
+        --h3-font-size: 2rem;
+        --p-font-size: 1.8rem;
+        --icons-font-size: 3.2rem;
     }
   }
