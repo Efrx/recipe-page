@@ -6,8 +6,24 @@
 }
 
 :root {
-    --gap-block: 2rem;
+    font-size: 62.5%;
+    --gap-block: 3.2rem;
     --orange-base: #F2994A ;
+
+    --aside-width: 200px;
+    --main-desktop-gap: 10%;
+
+    --h1-font-size: ;
+    --h2-font-size: ;
+    --h3-font-size: ;
+    --p-font-size: ;
+    --icons-font-size: ;
+
+    --flex-direction-info-time: row;
+}
+
+h1 {
+    /* font-size: var(--font-h1); */
 }
 
 a {
@@ -41,43 +57,86 @@ img {
     width: 100%;
 }
 
-.recipe-info {
-    border: 1px solid red;
-}
-
+/* Esto ocaciona que los iconos destro del aside 
+se organicen de esta manera icono | parrafo/parrafo*/
 .recipe-info__time li,
 .recipe-info__servings {
     display: flex;
     align-items: center;
 }
 
+/* los items del aside con iconos de reloj
+se organizan en columnas gracias al siguiente codigo */
+.recipe-info__time {
+    display: flex;
+    flex-direction: var(--flex-direction-info-time); /* */
+    gap: 3.2rem;
+}
+
+.aside {
+    flex: 0 0 var(--aside-width); /*grow: 0 - shrink: 0 - basis: 250px*/
+    height: max-content; /* height = contenido */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+
+    padding-block: 8rem; /* mas espacio interno */
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+
+    /* ocaciona que el aside este a la derecha 
+    y no a la izquierda  como el flow lo indica*/
+    flex-direction: row-reverse; 
+
+    /* espacio entre maincontent y aside en desktop */
+    gap: var(--main-desktop-gap);
+}
+/* icono naranja */
 .recipe-info__servings div p:last-of-type,
 .recipe-info__servings span {
     color: var(--orange-base);
 }
 
-.clock,
-.recipe-info__servings span {
-    /* flex-grow: 1; */
-    font-size: 1.5rem;
+/* Estilos para los iconos */
+.recipe-info__servings span,
+.clock {
+    font-size: 3.2rem;
 }
 
-.recipe-info__time {
-    display: flex;
+.proccess {
+    /* grow: 1 - shrink: 1 - basis: (3x)aside-width*/
+    flex: 1 1 calc(var(--aside-width)*2); 
 }
-
-
-
-/* .instructions__container--li {
-    margin-bottom:10px;
+@media ( width < 772px ) {
+    :root {
+        font-size: 62.5%;
+        --h1-font-size: ;
+        --h2-font-size: ;
+        --h3-font-size: ;
+        --p-font-size: ;
+        --icons-font-size: ;
+    }
+    .aside {
+        padding: 0;
+    }
 }
-.instructions__container--li span {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width: 2rem;
-    height: 2rem;
-    border-radius:5%;
-    background-color: orange;
-    color:#fff;
-} */
+@media ( width >= 772px ) {
+    :root {
+        font-size: 62.5%;
+        --flex-direction-info-time: column;
+        --h1-font-size: ;
+        --h2-font-size: ;
+        --h3-font-size: ;
+        --p-font-size: ;
+        --icons-font-size: ;
+    }
+    .aside {
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+    }
+}
