@@ -17,7 +17,7 @@
     --h2-font-size: 1.8rem;
     --h3-font-size: 1.6rem;
     --p-font-size: 1.4rem;
-    --icons-font-size: 2.4rem;
+    --icons-font-size: 2.6rem;
 
     --montserrat-font: 'Montserrat', sans-serif;
     --playfair-font: 'Playfair Display', serif;
@@ -47,13 +47,13 @@ h3 {
     font-weight: 500;
 }
 .aside-paragraph p:first-child {
-    font-size: calc( var(--h2-font-size) / 3);
+    font-size: calc( var(--h2-font-size) / 2.25);
     color: #BDBDBD;
     font-family: var(--montserrat-font);
     font-weight: 500;
 }
 .aside-paragraph p:last-child {
-    font-size: calc( var(--h2-font-size) / 2);
+    font-size: calc( var(--h2-font-size) / 1.25);
     font-family: var(--montserrat-font);
     font-weight: 700;
 }
@@ -133,7 +133,7 @@ se organizan en columnas gracias al siguiente codigo */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3.2rem;
+    gap: 2rem;
 
     padding-block: 8rem; /* mas espacio interno */
 }
@@ -187,6 +187,22 @@ se organizan en columnas gracias al siguiente codigo */
     text-align: center;
 }
 
+.ingredients {
+    margin-block: var(--gap-block);
+}
+.ingredients h2,
+.ingredients__pt1 h3,
+.ingredients__pt2 h3 {
+    margin-block: calc( var(--gap-block) / 2 );
+}
+
+.ingredients__cheklist li{
+    margin-block-end: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: start;
+}
+
 .footer {
     display: flex;
     flex-direction: column;
@@ -198,6 +214,7 @@ se organizan en columnas gracias al siguiente codigo */
 @media ( max-width: 772px ) {
     .aside {
         padding: 0;
+        flex-basis: content;
     }
     .main {
         flex-wrap: nowrap;
@@ -206,14 +223,14 @@ se organizan en columnas gracias al siguiente codigo */
 }
 
 /* entre 772px y 991px */
-@media (min-width: 772px) {
+@media (min-width: 773px) {
     :root {
         font-size: 62.5%;
         --h1-font-size: 3.2rem;
         --h2-font-size: 2rem;
         --h3-font-size: 1.8rem;
         --p-font-size: 1.6rem;
-        --icons-font-size: 2.6rem;
+        --icons-font-size: 2.8rem;
         --flex-direction-info-time: column;
     }
     .aside {
