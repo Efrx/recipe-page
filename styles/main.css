@@ -17,7 +17,7 @@
     --h2-font-size: 1.8rem;
     --h3-font-size: 1.6rem;
     --p-font-size: 1.4rem;
-    --icons-font-size: 3.2rem;
+    --icons-font-size: 2.4rem;
 
     --montserrat-font: 'Montserrat', sans-serif;
     --playfair-font: 'Playfair Display', serif;
@@ -40,18 +40,48 @@ h3 {
     font-family: var(--playfair-font);
     font-weight: 400;
 }
-p {
+.header p,
+.proccess p {
     font-size: var(--p-font-size);
     font-family: var(--montserrat-font);
     font-weight: 500;
 }
-a {
-    text-decoration: none;
-    font-size: var(--p-font-size);
+.aside-paragraph p:first-child {
+    font-size: calc( var(--h2-font-size) / 3);
+    color: #BDBDBD;
     font-family: var(--montserrat-font);
     font-weight: 500;
+}
+.aside-paragraph p:last-child {
+    font-size: calc( var(--h2-font-size) / 2);
+    font-family: var(--montserrat-font);
+    font-weight: 700;
 }
 
+a {
+    text-decoration: none;
+    font-family: var(--montserrat-font);
+}
+
+.recipe--source,
+.recipe--source a {
+    font-weight: 400;
+    color: #BDBDBD;
+    font-size: var(--h2-font-size);
+    font-family: var(--montserrat-font);
+}
+
+.footer--link,
+.footer--link a{
+    font-family: var(--montserrat-font);
+    font-size: var(--p-font-size);
+    font-weight: 400;
+    color: #828282;
+}
+
+.user--name {
+    text-decoration: underline;
+}
 
 li {
     list-style: none;
@@ -124,11 +154,14 @@ se organizan en columnas gracias al siguiente codigo */
 .recipe-info__servings span {
     color: var(--orange-base);
 }
-
 /* Estilos para los iconos */
 .recipe-info__servings span,
-.clock {
+.recipe-info__time span {
     font-size: var(--icons-font-size);
+}
+
+.recipe-info__time div p {
+    font-size: calc( var(--p-font-size / 2) );
 }
 
 .proccess {
@@ -136,27 +169,43 @@ se organizan en columnas gracias al siguiente codigo */
     flex: 1 1 calc(var(--aside-width)*2); 
 }
 
+.instructions__container--li {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 1rem;
+    margin-block-start: var(--gap-block);
+}
+.instructions__container--li span {
+    font-size: 2.4rem;
+    color: white;
+    font-family: var(--playfair-font);
+    font-weight: 700;
+    background-color:  var(--orange-base);
+    border-radius: 5px;
+    width: 3.6rem;
+    height: 3.6rem;
+    text-align: center;
+}
 
-
-
-
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-block);
+    align-items: center;
+}
 
 /* menores de 772px */
 @media ( max-width: 772px ) {
     .aside {
         padding: 0;
     }
+    .main {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
 }
 
-/* entre 772px y 991px 
-
-    --h1-font-size: 2.4rem;
-    --h2-font-size: 1.8rem;
-    --h3-font-size: 1.6rem;
-    --p-font-size: 1.4rem;
-    --icons-font-size: 3.2rem;
-
-*/
+/* entre 772px y 991px */
 @media (min-width: 772px) {
     :root {
         font-size: 62.5%;
@@ -164,7 +213,7 @@ se organizan en columnas gracias al siguiente codigo */
         --h2-font-size: 2rem;
         --h3-font-size: 1.8rem;
         --p-font-size: 1.6rem;
-        --icons-font-size: 3.2rem;
+        --icons-font-size: 2.6rem;
         --flex-direction-info-time: column;
     }
     .aside {
@@ -181,6 +230,6 @@ se organizan en columnas gracias al siguiente codigo */
         --h2-font-size: 2.4rem;
         --h3-font-size: 2rem;
         --p-font-size: 1.8rem;
-        --icons-font-size: 3.2rem;
+        --icons-font-size: 3rem;
     }
-  }
+}
