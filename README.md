@@ -57,6 +57,11 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 - Your wisdom? :)
 
    Always Make a responsive but maintainable CSS code to, you need to use properties customs
+  
+![screenshot](/images/overview/Document%20-%20Google%20Chrome%205_25_2023%208_09_59%20PM.png)
+
+![screenshot](/images/overview/Document%20-%20Google%20Chrome%205_25_2023%208_09_44%20PM.png)
+
 
 ### Built With
 
